@@ -1,3 +1,97 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.freeHidden, .infoHidden {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .free-inactive, .info-active {
+    opacity: 1;
+
+  }
+  input[type="range"] {
+    -webkit-appearance: none;
+    width: 50%;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: blue;
+    cursor: pointer;
+  }
+  
+  input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color:blue;
+    cursor: pointer;
+  }
+  
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 3px;
+    border-radius: 5px;
+    background-color: #ddd;
+  }
+  
+  input[type="range"]:focus::-webkit-slider-runnable-track {
+    background-color: #ccc;
+  }
+  
+  input[type="range"]::-moz-range-track {
+    height: 3px;
+    border-radius: 5px;
+    background-color: #ddd;
+  }
+  
+  input[type="range"]:focus::-moz-range-track {
+    background-color: #ccc;
+  }
+
+  .sort-array {
+    position: fixed;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    right: 0;
+    bottom: 40%;
+  }
+  
+  .array-element {
+    width: 50px;
+    height: 50px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    line-height: 50px;
+    margin: 0 10px;
+  }
+  .swap {
+    animation-name: swap;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+  }
+  @keyframes swap {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(60px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
