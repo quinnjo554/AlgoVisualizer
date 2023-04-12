@@ -68,30 +68,108 @@
     bottom: 40%;
   }
   
-  .array-element {
+  .array-element-1 {
     width: 50px;
-    height: 50px;
+    height: 200px;
     background-color: #4CAF50;
     color: white;
     text-align: center;
     font-size: 30px;
     line-height: 50px;
     margin: 0 10px;
+    animation: inflate 1s forwards 3s ease-in , swapRight 1s forwards 5s ease , inflate2 1s forwards 8s ease , swapRight2 1s forwards 9s ;
   }
-  .swap {
-    animation-name: swap;
-    animation-duration: 1s;
-    animation-timing-function: ease;
+  
+
+  .array-element-2 {
+    width: 50px;
+    height: 80px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    line-height: 50px;
+    margin: 0 10px;
+    animation: inflate 1s forwards 4s ease-in , swapLeft 1s forwards 6s ease ;
   }
-  @keyframes swap {
+  .array-element-3 {
+    width: 50px;
+    height: 150px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    line-height: 50px;
+    margin: 0 10px;
+    animation: inflate 1s forwards 8s , swapLeft 1s forwards 10s ;
+  }
+
+
+  .canvas{
+    background-image: url("assets/wp2448347-hiroshi-nagai-wallpapers.png");
+    background-size: cover;
+
+  }
+
+  @keyframes inflate {
+    0%{
+      transform: translateY(0px);
+      color: #4CAF50;
+    }
+    100%{
+      transform: translateY(60px);
+      background-color: red;
+    }
+
+  }
+
+  @keyframes swapRight {
     0% {
-      transform: translateX(0);
+      transform: translateX(0px);
+      transform: translateY(60px);
     }
     50% {
-      transform: translateX(60px);
+      transform: translateX(70px);
     }
     100% {
-      transform: translateX(0);
+      transform: translate(70px);
+      background-color: #4CAF50;
+    }
+  }
+  @keyframes swapRight2 {
+    0% {
+      transform: translateX(70px) translateY(70px);
+      /* transform: translateY(70px); - Incorrect */
+    }
+    100% {
+      transform: translateX(140px) translateY(0px);
+      /* transform: translate(140px); - Incorrect */
+      background-color: #4CAF50;
+    }
+}
+
+  @keyframes swapLeft {
+    0% {
+      transform: translateX(0px);
+      transform: translateY(60px);
+    }
+    50% {
+      transform: translateX(-70px);
+    }
+    100% {
+      transform: translate(-70px);
+      background-color: #4CAF50;
+    }
+  }
+
+  @keyframes inflate2 {
+    0% {
+      transform: translateX(70px) translateY(0px);
+      color: #4CAF50;
+    }
+    100% {
+      transform: translateX(70px) translateY(60px);
+      background-color: red;
     }
   }
   

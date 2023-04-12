@@ -1,4 +1,4 @@
-import { Block } from "./BubbleSort";
+import { Block } from "./Block";
 const YINCREMENT = 50;
 const HEIGHT = 300;
 //const N = 100; //max 300 with x and y of 1
