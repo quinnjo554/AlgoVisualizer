@@ -4,13 +4,26 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import NavBar from './Components/NavBar'
 import Sort from './Components/Sort'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import MainPage from './Components/MainPage'
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
         <NavBar></NavBar>
-        <Sort sortType="Quick"></Sort>
+        <Router>
+          <Routes>
+            <Route path="/" element={<MainPage/>} />
+            <Route path="/bubblesort" element={<Sort sortType={"Bubble"} />} />
+            <Route path="/quicksort" element={<Sort sortType={"Quick"} />} />
+          </Routes>
+        </Router>
     </div>
   )
 }

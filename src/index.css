@@ -103,12 +103,40 @@
     margin: 0 10px;
     animation: inflate 1s forwards 8s , swapLeft 1s forwards 10s ;
   }
-
-
+  .editor {
+    display: flex;
+  }
+  
+  .line-numbers {
+    flex-shrink: 0;
+    padding-right: 0.5em;
+    text-align: right;
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .text-area {
+    flex-grow: 1;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    resize: none;
+    outline: none;
+  }
   .canvas{
-    background-image: url("assets/wp2448347-hiroshi-nagai-wallpapers.png");
+    background-color: black;
     background-size: cover;
 
+  }
+  .child-menu {
+    display: none;
+  }
+  
+  .visible {
+    display: block;
   }
 
   @keyframes inflate {

@@ -3,8 +3,14 @@ import { BubbleSort } from '../AlgoLogic/BubbleSort'; // import BubbleSort funct
 import Lesson from './Lesson';
 import { render } from 'react-dom';
 import { QuickSort } from '../AlgoLogic/QuickSort';
+
+interface SortProps {
+  sortType?: string;
+}
+
+
 //reuse this component 
-function Sort({sortType}:any) {
+function Sort(props: SortProps) {
   // Set up state variables using useState hook
   const [increment, setIncrement] = useState(1); // used to increment the display
   const [clicked, setClicked] = useState(false); // used to trigger the sorting algorithm
@@ -21,7 +27,7 @@ function Sort({sortType}:any) {
   useEffect(() => {
     setIsBubbleRunning(true); // set isBubbleRunning to true when the effect is triggered
     //add val to bubble sort
-    if(sortType == "Bubble"){
+    if(props.sortType == "Bubble"){
     BubbleSort(sliderDelay, clicked, infoClick, freeClick,sliderVal,sliderXIncrement,sliderWidth,isSliderDefault) // call BubbleSort function with current state variables
       .then(() => {
         setIsBubbleRunning(false);
@@ -31,7 +37,7 @@ function Sort({sortType}:any) {
         setIsBubbleRunning(false); // set isBubbleRunning to false when sorting fails
       });
     }
-    if(sortType == "Quick"){
+    if(props.sortType == "Quick"){
       QuickSort(sliderDelay, clicked, infoClick, freeClick,sliderVal,sliderXIncrement,sliderWidth,isSliderDefault) // call BubbleSort function with current state variables
       .then(() => {
         setIsBubbleRunning(false);
@@ -98,9 +104,9 @@ function Sort({sortType}:any) {
 
   const renderLesson = () => {
     // Define different lessons based on sortType prop
-    if (sortType === 'Quick') {
+    if (props.sortType === 'Quick') {
       return <p>Boobs</p>;
-    } else if (sortType === 'Bubble') {
+    } else if (props.sortType === 'Bubble') {
       return <Lesson/>;
     } else {
       // Render a default lesson or handle unsupported sort types
@@ -110,7 +116,7 @@ function Sort({sortType}:any) {
   return (
     <div className="sortContainer w-2/3 h-[91vh] rounded-md">
       <div id="box" className="w-full h-full bg-white">
-        <canvas id={sortType} className="canvas"></canvas>
+        <canvas id={props.sortType} className="canvas"></canvas>
       </div>
       <div className="fixed right-0 top-20 bg-gray-100 w-1/3 h-full">
         <div className="flex justify-start">
@@ -130,7 +136,7 @@ function Sort({sortType}:any) {
             }`}
             disabled={freeClick}
           >
-            {sortType} sort 
+            {props.sortType} sort 
           </button>
         </div>
         
@@ -144,7 +150,7 @@ function Sort({sortType}:any) {
         {freeClick ? (
           <div>
             <div>
-                <input onChange={handleSliderChange} type="range" name="Volume" id="volume" min="5" max={sortType == "Quick" ? "1000" : "100"} />
+                <input onChange={handleSliderChange} type="range" name="Volume" id="volume" min="5" max={props.sortType == "Quick" ? "1000" : "100"} />
                 <p>{sliderVal}</p>
             </div>
             <div>
