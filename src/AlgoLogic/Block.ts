@@ -24,7 +24,7 @@ export class Block {
 draw(ctx:any):void{
     ctx.fillStyle = 'red'
     if(!this.isHighlighted){
-    ctx.fillStyle = 'black';
+    ctx.fillStyle = 'green';
     }
     const rectHeight = this.value * ctx.canvas.height;
     ctx.fillRect(this.x, ctx.canvas.height - rectHeight, this.width, rectHeight);

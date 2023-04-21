@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import IDE from './IDE';
 function Lesson() {
   const [increment, setIncrement] = useState(1); // used to increment the display
   const handleClickDisplay = () => {
@@ -35,7 +36,9 @@ function Lesson() {
       ) : null}
 
     {increment == 2 ? (
-        <div>IDE</div>
+      <div className='relative top-20'>
+       <IDE/>
+       </div>
     ):null}
 
   <button id="button" onClick={handleClickDisplay} className="bg-green-300 p-3 w-max fixed right-10 bottom-10">
