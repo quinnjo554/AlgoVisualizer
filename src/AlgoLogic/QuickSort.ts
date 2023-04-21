@@ -17,7 +17,7 @@ export async function QuickSort(delay: number, clicked:boolean,info:boolean,free
     if (ctx) {
       // Check if rects is null before calling rectInit
       if(!rects){
-        rects = rectInit(ctx,100,4,3);
+        rects = rectInit(ctx,800,0.5,0.2);
         // default value on load
         isFirstSort =true;
       }

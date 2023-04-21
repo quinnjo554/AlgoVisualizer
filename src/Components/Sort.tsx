@@ -105,12 +105,12 @@ function Sort(props: SortProps) {
   const renderLesson = () => {
     // Define different lessons based on sortType prop
     if (props.sortType === 'Quick') {
-      return <p>Boobs</p>;
+      return <p>Quick</p>;
     } else if (props.sortType === 'Bubble') {
       return <Lesson/>;
     } else {
       // Render a default lesson or handle unsupported sort types
-      return <p>Balls Shit: Something wrong</p>;
+      return <p>Something wrong</p>;
     }
   };
   return (
